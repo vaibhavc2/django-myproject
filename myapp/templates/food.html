@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Food - My Django Project{% endblock %}
+
+{% block content %}
+<style>
+  /* CSS styles for the table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #333;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid #333;
+    text-align: left;
+  }
+
+  th {
+    background-color: #333;
+    color: white;
+  }
+
+  
+
+  /* CSS styles for the details */
+  .details {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #f9f9f9;
+    display: none;
+  }
+</style><h1>Delicious Food</h1>
+<table>
+  <tr>
+    <th>Food Item</th>
+    <th>Cost (in Rupees)</th>
+  </tr>
+  {% for item in items %}
+  <tr>
+    <td><a href="{% url 'food_detail' item.name %}">{{ item.name }}</a></td>
+    <td>{{ item.cost }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

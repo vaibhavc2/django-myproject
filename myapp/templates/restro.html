@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Items</title>
+    <style>
+        table {
+    width: 80%; 
+    border-collapse: separate; 
+    border-spacing: 0;  
+    border: 2px solid #dee2e6;          
+}
+
+th, td {
+    padding: 8px;   
+    text-align: left;
+    border-right: 1px solid #dee2e6;    
+    border-bottom: 1px solid #dee2e6; 
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;     
+}
+
+.free-item {
+    background-color: #85d6d6;  
+    color: #212529; 
+}
+
+    </style>
+</head>
+<body>
+
+<!-- <h2>Restaurant Items</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr {% if item.cost == 'free' %}class="free-item"{% endif %}>
+            <td>{{ item.name }}</td>
+            <td>{{ item.cost }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> -->
+<h1>{{ item.name }}</h1>
+<p>{{ item.cost }}</p>
+
+<td colspan="2"> item not found</td>
+
+</body>
+</html>
